@@ -1,0 +1,26 @@
+<div class="mb-3">
+    <label for="bookName" class="form-label">Book Name</label>
+    <input type="text" name="name" value="{{ book.name }}" required="required" class="form-control" id="bookName" />
+</div>
+
+<div class="mb-3">
+    <label for="bookCost" class="form-label">Book Cost</label>
+    <input
+        type="number"
+        min="0"
+        name="cost"
+        value="{{ book.cost }}"
+        required="required"
+        class="form-control"
+        id="bookCost"
+    />
+</div>
+
+<div class="mb-3">
+    <label for="bookLibrary" class="form-label">Select library</label>
+    <select name="library" class="form-select" aria-label="Default select example" id="bookLibrary">
+        {% for library in libraries %}
+        <option value="{{ library.pk }}">{{ library.name }}</option>
+        {% endfor %}
+    </select>
+</div>

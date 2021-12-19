@@ -1,0 +1,12 @@
+{% extends 'inc/base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <h1 class="text-center mt-4">New Book</h1>
+</div>
+<!-- Page Content -->
+<div>
+    <form action="{% url 'create_book' %}" method="POST" class="form">
+        {% csrf_token %} {% include 'book/book_form.html' with book=book %}
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+{% endblock content %}

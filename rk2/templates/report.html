@@ -1,0 +1,22 @@
+{% extends 'inc/base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <h1 class="text-center mt-4">Report Page</h1>
+</div>
+<!-- Page Content -->
+<div>
+    <h1>Expensive books</h1>
+    {% for book in expensive_books %} {% include 'book/book_card.html' with book=book %} {% endfor %}
+</div>
+
+<div>
+    <h1>Average costs</h1>
+    <div class="d-flex flex-wrap">
+        {% for avg_price in avg_prices %}
+        <div class="d-flex flex-column align-center" >
+            <h3 class="text-center">Average cost {{ avg_price.price }}</h3>
+            {% include 'library/library_card.html' with library=avg_price.library %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

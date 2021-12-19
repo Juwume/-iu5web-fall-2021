@@ -1,0 +1,25 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-3">
+    <a class="navbar-brand ml-5" href="{% url 'main' %}">Library</a>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a href="{% url 'main' %}" class="nav-link">Main Page</a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'read_book' %}" class="nav-link">All books</a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'create_book' %}" class="nav-link">Create book</a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'read_library' %}" class="nav-link">All librarys</a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'create_library' %}" class="nav-link">Create library</a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'report' %}" class="nav-link">Report</a>
+        </li>
+    </ul>
+</nav>
